@@ -25,7 +25,7 @@
     </form>
     <p>Your Email: {{ email }}</p>
     <script>
-        var app = angular.module("myApp", []);
+        const app = angular.module("myApp", []);
         app.controller("myController", function($scope) {
             $scope.message = "Hello! Welcome to AngularJS";
         });
