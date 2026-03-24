@@ -8,7 +8,7 @@
     <form name="myForm">
         <label>Email:</label>
         <input type="email" name="email" ng-model="email"
-            ng-pattern="/^[a-zA-Z0-9._%+-]+@gmail\.com$/"
+            ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/"
             required>
         <br><br>
         <span style="color:red" ng-show="myForm.email.$dirty">
@@ -19,7 +19,7 @@
                 Invalid email format.
             </span>
             <span ng-show="myForm.email.$error.pattern">
-                Email must be in Gmail format (example: anjan@gmail.com).
+                Enter a valid email (e.g., anjan@gmail.com).
             </span>
         </span>
     </form>
