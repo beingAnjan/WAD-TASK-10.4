@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myController">
+    <form name="myForm">
+        <label>Email:</label>
+        <input type="email" name="email" ng-model="email"
+            ng-pattern="/^[a-zA-Z0-9._%+-]+@gmail\.com$/"
+            required>
+        <br><br>
+        <span style="color:red" ng-show="myForm.email.$dirty">
+            <span ng-show="myForm.email.$error.required">
+                Email is required.
+            </span>
+            <span ng-show="myForm.email.$error.email">
+                Invalid email format.
+            </span>
+            <span ng-show="myForm.email.$error.pattern">
+                Email must be in Gmail format (example: anjan@gmail.com).
+            </span>
+        </span>
+    </form>
+    <p>Your Email: {{ email }}</p>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myController", function($scope) {
+            $scope.message = "Hello! Welcome to AngularJS";
+        });
+    </script>
+</body>
+</html>
